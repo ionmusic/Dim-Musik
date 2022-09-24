@@ -1,4 +1,4 @@
-# Sumit Yadav // @Simple_Mundaa
+# sip-Userbot // @sip-userbot
 
 import os
 from pyrogram import Client, filters
@@ -17,9 +17,9 @@ async def clear_downloads(_, message: Message):
     if ls_dir:
         for file in os.listdir(downloads):
             os.remove(os.path.join(downloads, file))
-        await message.reply_text("✅ **ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ғɪʟᴇs**")
+        await message.reply_text("✅ **menghapus semua file unduhan**")
     else:
-        await message.reply_text("❌ **ɴᴏ ғɪʟᴇs ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ**")
+        await message.reply_text("❌ **tidak ada file yang diunduh**")
 
         
 @Client.on_message(command(["rmw", "clean"]) & ~filters.edited)
@@ -30,9 +30,9 @@ async def clear_raw(_, message: Message):
     if ls_dir:
         for file in os.listdir(raw_files):
             os.remove(os.path.join(raw_files, file))
-        await message.reply_text("✅ **ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ʀᴀᴡ ғɪʟᴇs**")
+        await message.reply_text("✅ **menghapus semua file unduhan**")
     else:
-        await message.reply_text("❌ **ɴᴏ ʀᴀᴡ ғɪʟᴇs**")
+        await message.reply_text("❌ **tidak ada file yang diunduh**")
 
 
 @Client.on_message(command(["cleanup"]) & ~filters.edited)
@@ -44,6 +44,6 @@ async def cleanup(_, message: Message):
     if ls_dir:
         for dta in os.listdir(pth):
             os.system("rm -rf *.webm *.jpg")
-        await message.reply_text("✅ **ᴄʟᴇᴀɴᴇᴅ**")
+        await message.reply_text("✅ **dibersihkan**")
     else:
-        await message.reply_text("✅ **ᴀʟʀᴇᴀᴅʏ ᴄʟᴇᴀɴᴇᴅ**")
+        await message.reply_text("✅ **sudah siap dibersihkan**")
