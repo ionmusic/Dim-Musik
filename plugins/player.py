@@ -154,7 +154,7 @@ async def play(_, message: Message):
     global que
     global useer
     
-    lel = await message.reply("**🔎 sᴇᴀʀᴄʜɪɴɢ...**")
+    lel = await message.reply("**🔎 Mencari...**")
    
     bsdk = message.from_user.mention
 
@@ -176,24 +176,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**» ᴀᴅᴅ ᴍᴇ ᴀs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ғɪʀsᴛ.**")
+                        "**» tambahkan saya sebagai admin di grup Anda terlebih dahulu.**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** ✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ ᴛʜɪs ɢʀᴏᴜᴘ ғᴏʀ ᴘʟᴀʏ ᴍᴜsɪᴄ.**")
+                        message.chat.id, "** ✅ asisten bergabung dengan grup ini untuk memutar musik.**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**ᴘʟᴇᴀsᴇ ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀssɪsᴛᴀɴᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ [sᴜᴍɪᴛ ʏᴀᴅᴀᴠ](https://t.me/Mr_DiSasTer_XD)** ")
+                        f"** silakan tambahkan asisten atau kontak secara manual [𝐊𝐋𝐘 ༱ 𝐇𝐀𝐍𝐃𝐁𝐄𝐀 🇦🇱](https://t.me/Klyuserbot)** ")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**ᴘʟᴇᴀsᴇ ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀssɪsᴛᴀɴᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ [sᴜᴍɪᴛ ʏᴀᴅᴀᴠ](https://t.me/Mr_DiSasTer_XD)*")
+            f"**silakan tambahkan asisten atau kontak secara manual [𝐊𝐋𝐘 ༱ 𝐇𝐀𝐍𝐃𝐁𝐄𝐀 🇦🇱](https://t.me/Klyuserbot)*")
         return
     
     audio = (
@@ -206,7 +206,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
+                f"**» lagu lebih lama dari {DURATION_LIMIT} menit tidak diperbolehkan untuk bermain.**"
             )
 
         file_name = get_file_name(audio)
@@ -219,8 +219,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/TechQuardSupport"),
-                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/TechQuard"),
+                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/suportsipuserbot"),
+                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/suportNande"),
             ],
             [   InlineKeyboardButton(text="● ᴄʟᴏsᴇ ●", callback_data="close_play")
             ]
@@ -258,8 +258,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/TechQuardSupport"),
-                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/TechQuard"),
+                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/suportsipuserbot"),
+                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/suportNande"),
             ],
             [   InlineKeyboardButton(text="● ᴄʟᴏsᴇ ●", callback_data="close_play")
             ]
@@ -274,8 +274,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/TechQuardSupport"),
-                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/TechQuard"),
+                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/suportsipuserbot"),
+                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/suportNande"),
             ],
             [   InlineKeyboardButton(text="● ᴄʟᴏsᴇ ●", callback_data="close_play")
             ]
@@ -284,8 +284,8 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
-            )
+                f"**» lebih lama dari {DURATION_LIMIT} menit tidak diperbolehkan untuk bermain.**"
+             )
             return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
@@ -294,7 +294,7 @@ async def play(_, message: Message):
         if len(message.command) < 2:
             await message.reply_photo(
                      photo=f"https://te.legra.ph/file/71bdd6e8c353398a4034a.jpg",
-                     caption="💌 **ᴜsᴀɢᴇ: /play ɢɪᴠᴇ ᴀ ᴛɪᴛʟᴇ sᴏɴɢ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ**"
+                     caption="💌 **ᴜsᴀɢᴇ: /play beri judul lagu untuk memutar musik**"
                     
             )
         await lel.edit("**⇆ ᴘʀᴏᴄᴇssɪɴɢ.**")
@@ -322,7 +322,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**» ɴᴏᴛ ғᴏᴜɴᴅ, ᴛʀʏ sᴇᴀʀᴄʜɪɴɢ ᴡɪᴛʜ ᴛʜᴇ sᴏɴɢ ɴᴀᴍᴇ.**"
+                "**» Tidak ditemukan, coba cari dengan Nama lagu.**"
             )
             print(str(e))
             return
@@ -330,8 +330,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/TechQuardSupport"),
-                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/TechQuard"),
+                InlineKeyboardButton(text="● sᴜᴘᴘᴏʀᴛ ●", url=f"https://t.me/suportsipuserbot"),
+                InlineKeyboardButton(text="● ᴜᴘᴅᴀᴛᴇs ●", url=f"https://t.me/suportNande"),
             ],
             [   InlineKeyboardButton(text="● ᴄʟᴏsᴇ ●", callback_data="close_play")
             ]
@@ -339,7 +339,7 @@ async def play(_, message: Message):
     )
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
+                f"**» lebih lama dari {DURATION_LIMIT} menit tidak diperbolehkan untuk bermain.**"
             )
             return
         requested_by = message.from_user.first_name
@@ -353,7 +353,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption=f"**» ᴛʀᴀᴄᴋ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ {position} **\n──────────────────\n​🍄 **ɴᴀᴍᴇ :**[{title[:65]}]({url})\n──────────────────\n⏰ ** ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` **ᴍɪɴᴜᴛᴇs**\n👀 ** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{bsdk}",
+            caption=f"**» Lagu telah ditambahkan ke antrian {position} **\n──────────────────\n​🍄 **ɴᴀᴍᴇ :**[{title[:65]}]({url})\n──────────────────\n⏰ ** ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` **Menit**\n👀 ** Saran dari : **{bsdk}",
             reply_markup=keyboard,
         )
     else:
@@ -382,7 +382,7 @@ async def play(_, message: Message):
 @authorized_users_only
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ.**"
+    await message.reply_text("**» pemutar musik tidak ada yang diputar.**"
     )
 
 
@@ -423,7 +423,7 @@ async def skip(_, message: Message):
             )
 
 
-    await message.reply_text('**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴋɪᴘᴘᴇᴅ ᴛʜᴇ sᴏɴɢ.**'
+    await message.reply_text('**» pemutar musik tidak ada yang diputar.**'
    ) 
 
 
@@ -437,7 +437,7 @@ async def stop(_, message: Message):
         pass
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ.**"
+    await message.reply_text("**» pemutar musik tidak ada yang diputar.**"
     )
 
 
@@ -455,7 +455,7 @@ async def admincache(client, message: Message):
 
     await message.reply_photo(
                               photo="https://telegra.ph/file/fa8358cbb060a1b92339a.jpg",
-                              caption="**✅ ʙᴏᴛ ʀᴇʟᴏᴀᴅᴇᴅ ᴄᴏʀʀᴇᴄᴛʟʏ !\n✅ ᴀᴅᴍɪɴ ʟɪsᴛ ʜᴀs ᴜᴘᴅᴀᴛᴇᴅ !**"
+                              caption="**✅ bot sudah dimuat ulang dengan benar !\n✅ daftar admin telah diperbarui !**"
     )
 
 @Client.on_callback_query(filters.regex("close_play"))
