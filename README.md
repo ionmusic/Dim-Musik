@@ -22,4 +22,5 @@
 
  # Thanks for you
 [Sumit](https://github.com/Sumit9989/DarkxMusic)
-[Sip](https://github.com/sip-Userbot/Dim-Musik)
+
+[Sip](https://github.com/sip-Userbot/Dim-Musik) for [Nande-Telethon](https://github.com/sip-Userbot/Nande-Telethon)
