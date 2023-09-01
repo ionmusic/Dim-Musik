@@ -42,24 +42,26 @@ async def others(_, query: CallbackQuery):
         f"""ʜᴇʏᴀ [{query.message.chat.first_name}](tg://user?id={query.message.chat.id})
 
 Dim Musik untuk Telegram :""",
-    reply_markup=InlineKeyboardMarkup(
+        reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🗯️ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/suportsipuserbot"),
+                        "🗯️ ꜱᴜᴘᴘᴏʀᴛ", url="https://t.me/suportsipuserbot"
+                    ),
                     InlineKeyboardButton(
-                        "🌐 ᴜᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/suportNande")
+                        "🌐 ᴜᴘᴅᴀᴛᴇꜱ", url="https://t.me/suportNande"
+                    ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🍄 ᴍᴀɪɴᴛᴀɪɴᴇʀ", url="https://t.me/Klyuserbot"),
+                        "🍄 ᴍᴀɪɴᴛᴀɪɴᴇʀ", url="https://t.me/Klyuserbot"
+                    ),
                     InlineKeyboardButton(
-                        "🍀 ᴏᴛʜᴇʀ ɪɴғᴏ", callback_data="repoinfo")
+                        "🍀 ᴏᴛʜᴇʀ ɪɴғᴏ", callback_data="repoinfo"
+                    ),
                 ],
-                [
-                    InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="home")
-                ]
-           ]
+                [InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="home")],
+            ]
         ),
     )
 
@@ -77,7 +79,7 @@ async def reinfo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("repoinfo"))
 async def repoinfo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""Selengkapnya Tentang Saya : 
+        """Selengkapnya Tentang Saya : 
 Tidak banyak fitur lainnya dan tolong bergabung dengan saluran atau saluran Instagram.
 Repo ini hanya dibuat untuk menyebarkan bot musik yang kuat di heroku tanpa menghadapi masalah pemblokiran akun heroku.
 .
@@ -87,21 +89,25 @@ Repo ini hanya dibuat untuk menyebarkan bot musik yang kuat di heroku tanpa meng
             [
                 [
                     InlineKeyboardButton(
-                        "🔗 ɢɪᴛʜᴜʙ", url=f"https://github.com/sip-Userbot/Dim-Musik"),
+                        "🔗 ɢɪᴛʜᴜʙ",
+                        url="https://github.com/sip-Userbot/Dim-Musik",
+                    ),
                     InlineKeyboardButton(
-                        "💌 Instagram", url=f"https://instagram.com/kanjeng_47?igshid=YmMyMTA2M2Y=")
+                        "💌 Instagram",
+                        url="https://instagram.com/kanjeng_47?igshid=YmMyMTA2M2Y=",
+                    ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👾 ʙᴏᴛ ʟɪsᴛs", url="https://t.me/suportsipuserbot"),
+                        "👾 ʙᴏᴛ ʟɪsᴛs", url="https://t.me/suportsipuserbot"
+                    ),
                     InlineKeyboardButton(
-                        "🤤 ᴘᴏʀɴ ʜᴜʙ", url="http://t.me/suportNande")
+                        "🤤 ᴘᴏʀɴ ʜᴜʙ", url="http://t.me/suportNande"
+                    ),
                 ],
-                [
-                    InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="moreinfo")
-                ]
-           ]
+                [InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="moreinfo")],
+            ]
         ),
-     )
+    )
     
         
