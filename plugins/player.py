@@ -58,15 +58,15 @@ def time_to_seconds(time):
 def truncate(text):
     list = text.split(" ")
     text1 = ""
-    text2 = ""    
+    text2 = ""
     for i in list:
-        if len(text1) + len(i) < 27:        
-            text1 += " " + i
-        elif len(text2) + len(i) < 25:        
-            text2 += " " + i
+        if len(text1) + len(i) < 27:
+            text1 += f" {i}"
+        elif len(text2) + len(i) < 25:
+            text2 += f" {i}"
 
     text1 = text1.strip()
-    text2 = text2.strip()     
+    text2 = text2.strip()
     return [text1,text2]
 
 
@@ -76,8 +76,7 @@ def changeImageSize(maxWidth, maxHeight, image):
     heightRatio = maxHeight / image.size[1]
     newWidth = int(widthRatio * image.size[0])
     newHeight = int(heightRatio * image.size[1])
-    newImage = image.resize((newWidth, newHeight))
-    return newImage
+    return image.resize((newWidth, newHeight))
 
 
 async def generate_cover(requested_by, title, views, duration, thumbnail):
@@ -88,7 +87,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                 await f.write(await resp.read())
                 await f.close()
 
-    image = Image.open(f"./background.png")
+    image = Image.open("./background.png")
     black = Image.open("resource/black.jpg")
     img = Image.open("resource/darkxmusic.png")
     image5 = changeImageSize(1280, 720, img)
@@ -108,7 +107,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     #final_img_arr = np.dstack((img_arr,lum_img_arr))
     #image3 = Image.fromarray(final_img_arr)
     image3 = image3.resize((500,500))
-    
+
     image2.paste(image3, (100,115))
     image2.paste(image5, mask = image5)
 
@@ -122,25 +121,24 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
     # title
     title1 = truncate(title)
-    image4.text((670, 280), text=title1[0], fill="white", font = font3, align ="left") 
+    image4.text((670, 280), text=title1[0], fill="white", font = font3, align ="left")
     image4.text((670, 332), text=title1[1], fill="white", font = font3, align ="left") 
 
     # description
     views = f"Views : {views}"
     duration = f"Duration : {duration} minutes"
-    channel = f"player : DarkxMusic"
+    channel = "player : DarkxMusic"
 
 
-    
-    image4.text((670, 410), text=views, fill="white", font = font4, align ="left") 
-    image4.text((670, 460), text=duration, fill="white", font = font4, align ="left") 
+
+    image4.text((670, 410), text=views, fill="white", font = font4, align ="left")
+    image4.text((670, 460), text=duration, fill="white", font = font4, align ="left")
     image4.text((670, 510), text=channel, fill="white", font = font4, align ="left")
 
-    
-    image2.save(f"final.png")
-    os.remove(f"background.png")
-    final = f"temp.png"
-    return final
+
+    image2.save("final.png")
+    os.remove("background.png")
+    return "temp.png"
 
 
 @Client.on_message(
